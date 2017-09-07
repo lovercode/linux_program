@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>/*fork*/
-
+#include <linux/sched.h>
 int
 main()
 {
@@ -17,6 +17,8 @@ main()
     //子进程返回0
     else if(ret == 0)
     {
+        // struct task_struct* task = current;
+
         printf("%s,%d,父:%d\n",
         "我是子进程",
         getpid(),
